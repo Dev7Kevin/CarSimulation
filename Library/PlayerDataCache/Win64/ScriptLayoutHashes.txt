@@ -309,3 +309,4 @@ a6377118ce98e8a229e9bc48efd753e2 Assembly-CSharp.dll:.EquipRandomItem
 2537c9184c7cd25194c1ad495e7ba765 Assembly-CSharp.dll:.UISliderColors
 698456a5a7f4c34ec00fd6bbddeb7d17 Assembly-CSharp.dll:.BackBtn
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.RealTime
+b4e699aaeb381822e00c44d5584ba315 Assembly-CSharp.dll:.UnitMarker
