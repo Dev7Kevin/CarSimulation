@@ -11,10 +11,14 @@ public class LookAtTargetCam : AbstractTargetFollower
 
     protected Vector3 m_FollowVelocity;
 
+    private Camera m_Camera;
+    public float m_Speed = 10f;
+
     protected override void Start()
     {
         base.Start();
         m_OriginalRotation = transform.localRotation;
+        m_Camera = GetComponent<Camera>();
     }
 
     protected override void FollowTarget(float deltaTime)
@@ -36,5 +40,28 @@ public class LookAtTargetCam : AbstractTargetFollower
         m_FollowAngles = Vector3.SmoothDamp(m_FollowAngles, targetAngles, ref m_FollowVelocity, m_FollowSpeed);
 
         transform.localRotation = m_OriginalRotation * Quaternion.Euler(-m_FollowAngles.x, m_FollowAngles.y, 0);
+    }
+
+    private void Update()
+    {
+        Zoom();
+    }
+
+    public void Zoom()
+    {
+        float scroll = Input.GetAxis("Mouse ScrollWheel") * m_Speed;
+        
+        if (m_Camera.fieldOfView <= 20f && scroll > 0)
+        {
+            m_Camera.fieldOfView = 20f;
+        }
+        else if(m_Camera.fieldOfView >= 85f && scroll < 0)
+        {
+            m_Camera.fieldOfView = 85f;
+        }
+        else
+        {
+            m_Camera.fieldOfView -= scroll;
+        }
     }
 }

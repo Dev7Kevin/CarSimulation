@@ -3,7 +3,6 @@ using System.Collections;
 
 public class SimpleActivatorMenu : MonoBehaviour {
 
-    public GUIText CamSwitchbutton;
     public GameObject[] Objects;
 
     private int m_CurrentActiveObject;
@@ -11,7 +10,6 @@ public class SimpleActivatorMenu : MonoBehaviour {
     private void OnEnable()
     {
         m_CurrentActiveObject = 0;
-        CamSwitchbutton.text = Objects[m_CurrentActiveObject].name;
     }
 
     public void NextCamera()
@@ -24,6 +22,5 @@ public class SimpleActivatorMenu : MonoBehaviour {
         }
 
         m_CurrentActiveObject = nextactiveobject;
-        CamSwitchbutton.text = Objects[m_CurrentActiveObject].name;
     }
 }

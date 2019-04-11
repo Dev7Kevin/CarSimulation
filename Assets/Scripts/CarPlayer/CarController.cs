@@ -182,9 +182,11 @@ public class CarController : MonoBehaviour
             {
                 closest = spawnTransform;
             }
-
-            transform.rotation = closest.rotation;
-            transform.position = closest.position;
         }
+
+        //transform.rotation = closest.rotation;
+        transform.rotation = Quaternion.identity;
+        transform.forward = closest.forward;
+        transform.position = closest.position;
     }
 }
