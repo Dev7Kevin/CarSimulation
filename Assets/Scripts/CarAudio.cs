@@ -68,12 +68,12 @@ public class CarAudio : MonoBehaviour {
 	void Update ()
     {
         //float camDist = (Camera.main.transform.position - transform.position).sqrMagnitude;
-
-        if (!m_StarteSound && m_SpeedMgr.Speed > 0)
+        
+        if (!m_StarteSound && m_CarController.m_CurrentSpeed > 0)
         {
             StartSound();
         }
-        else if(m_StarteSound && m_SpeedMgr.Speed <= 0)
+        else if(m_StarteSound && m_CarController.m_CurrentSpeed <= 0)
         {
             StopSound();
         }
@@ -88,7 +88,7 @@ public class CarAudio : MonoBehaviour {
     {
         if (source == null) return;
 
-        m_Volume = m_SpeedMgr.Speed * Time.deltaTime;
+        m_Volume = m_CarController.m_CurrentSpeed * Time.deltaTime;
         source.pitch = m_Volume;
         source.volume = 1;
     }
@@ -97,7 +97,7 @@ public class CarAudio : MonoBehaviour {
     {
         if (source == null) return;
 
-        m_Volume = m_SpeedMgr.Speed * Time.deltaTime;
+        m_Volume = m_CarController.m_CurrentSpeed * Time.deltaTime;
         source.volume = m_Volume;
     }
 

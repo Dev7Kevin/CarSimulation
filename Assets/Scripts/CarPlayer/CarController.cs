@@ -11,7 +11,7 @@ public class CarController : MonoBehaviour
     private Rigidbody m_Rigidbody;
 
     public float m_TopSpeed = 250f;
-    float m_CurrentSpeed;
+    public float m_CurrentSpeed { get; private set; }
 
     public float m_MaxTorque = 200f;
     float m_CurrentTorque;
@@ -25,8 +25,8 @@ public class CarController : MonoBehaviour
 
     public float m_MaxBrakeTorque = 2200f;
 
-    private float m_Forward { get; set; }
-    private float m_Turn { get; set; }
+    public float m_Forward { get; set; }
+    public float m_Turn { get; set; }
     public float m_Brake { get; set; }
 
     // ResetPosition
@@ -48,7 +48,7 @@ public class CarController : MonoBehaviour
     public void Back()
     {
         m_CurrentTorque -= m_Accel;
-        m_AccelCheck = true;
+        m_AccelCheck = false;
     }
 
     public void GoingStop()
@@ -164,7 +164,7 @@ public class CarController : MonoBehaviour
             m_wheelColliders[i].brakeTorque = m_MaxBrakeTorque * Brake;
         }
 
-        m_CurrentSpeed = m_Rigidbody.velocity.magnitude * 3.6f;
+        m_CurrentSpeed = m_Rigidbody.velocity.magnitude * 3.6f * 30;
     }
 
     public void ResetPosition()
@@ -184,9 +184,9 @@ public class CarController : MonoBehaviour
             }
         }
 
-        //transform.rotation = closest.rotation;
-        transform.rotation = Quaternion.identity;
-        transform.forward = closest.forward;
         transform.position = closest.position;
+        transform.rotation = closest.rotation;
+        m_Rigidbody.velocity = Vector3.zero;
+        m_Rigidbody.angularVelocity = Vector3.zero;
     }
 }

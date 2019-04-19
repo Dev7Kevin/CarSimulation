@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: RearView
   m_Shader: {fileID: 4800000, guid: 743880f84e4129a44b0ba81be9a88e52, type: 3}
   m_ShaderKeywords: 
