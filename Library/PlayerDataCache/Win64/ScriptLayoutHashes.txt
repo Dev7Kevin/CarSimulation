@@ -216,6 +216,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 8b7ab3e01e398137620c0bc31ff095be Assembly-CSharp.dll:.UICursor
 c845d81dd997d5094da7cdf0cc923eb4 Assembly-CSharp.dll:.TweenRotation
 b59f38ab014a54c116e38ae639afe09d Assembly-CSharp.dll:.UIPopupList
+3dfd95926efaf1529d591ddb7e1b3548 Assembly-CSharp.dll:.SteeringWheelController
 ceab607b5c6b3049e9c43ff476601811 Assembly-CSharp.dll:.TypewriterEffect
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 948d28d5ec4f9136b81f1647831b146c Assembly-CSharp.dll:.UIColorPicker
